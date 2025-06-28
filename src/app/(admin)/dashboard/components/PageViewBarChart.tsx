@@ -1,7 +1,7 @@
 'use client'
 
 import { fetcher } from '@/app/services/http-service';
-import type { categoryProps } from '@/types/dashboare';
+import type { categoryProps } from '@/types/dashboard';
 import React from 'react'
 import useSWR from 'swr';
 

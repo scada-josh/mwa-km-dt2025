@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 import io from './socket-io'
 dotenv.config()
  
-const port = parseInt(process.env.PORT || '3000', 10)
+const port = parseInt(process.env.PORT || '3001', 10)
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -16,7 +16,7 @@ app.prepare().then(() => {
 //   createServer((req, res) => {
 //     const parsedUrl = parse(req.url!, true)
 //     handle(req, res, parsedUrl)
-//   }).listen(port)
+//   }).listen(port) 
 
 
 

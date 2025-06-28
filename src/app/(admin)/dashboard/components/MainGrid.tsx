@@ -1,7 +1,7 @@
 'use client'
 
 import { fetcher } from '@/app/services/http-service';
-import { statCardProps } from '@/types/dashboare';
+import { statCardProps } from '@/types/dashboard';
 import React from 'react'
 import { io } from 'socket.io-client';
 import useSWR from 'swr';

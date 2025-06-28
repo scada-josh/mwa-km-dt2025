@@ -1,14 +1,14 @@
 'use client'
 
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import React, { useRef, useState } from "react";
 import { io, Socket } from "socket.io-client";
 
-let socket: Socket;
+// let socket: Socket;
 
 export default function Page() {
     const socketClient = io("http://localhost:3000");
-    const pathname = usePathname();
+    // const pathname = usePathname();
     const [isConnected, setIsConnected] = React.useState(false);
 
     const [messages, setMessages] = useState<string[]>([]);

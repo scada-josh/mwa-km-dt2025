@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { countCustomerService, countFilmService } from '@/app/services/dashboard-service';
-import { categpruProps } from '@/types/dashboare';
+import { categoryProps } from '@/types/dashboard';
 import { NextResponse } from 'next/server';
 
 
@@ -49,19 +50,19 @@ import { NextResponse } from 'next/server';
 // ใน Next.js API route http://localhost:3000/api/dashboard
 export async function GET() {
 
-  const data: categpruProps = [{
-    "category": "Sports",
-    "totalSales": "375.83"
-  },{
-    "category": "Sci-Fi",
-    "totalSales": "437.83"
-  },{
-    "category": "Animation",
-    "totalSales": "475.83"
-  },{
-      "category": "Action",
-      "totalSales": "45.833"
-    }]
+  // const data: categoryProps = [{
+  //   "category": "Sports",
+  //   "totalSales": "375.83"
+  // },{
+  //   "category": "Sci-Fi",
+  //   "totalSales": "437.83"
+  // },{
+  //   "category": "Animation",
+  //   "totalSales": "475.83"
+  // },{
+  //     "category": "Action",
+  //     "totalSales": "45.833"
+  //   }]
 
-  return NextResponse.json(data)
+  return NextResponse.json({msg: "Hello"})
 }
