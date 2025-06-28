@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 // import { usePathname } from "next/navigation";
@@ -7,7 +8,7 @@ import { io, Socket } from "socket.io-client";
 // let socket: Socket;
 
 export default function Page() {
-    const socketClient = io("http://localhost:3000");
+    const socketClient = io("http://localhost:3001");
     // const pathname = usePathname();
     const [isConnected, setIsConnected] = React.useState(false);
 

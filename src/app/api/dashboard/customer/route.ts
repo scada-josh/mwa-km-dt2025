@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextRequest, NextResponse } from "next/server";
-import io from "../../../../../socket-io";
+import io from "../../../../socket-io";
 import { countCustomerService, countFilmService } from "@/app/services/dashboard-service";
 
 export async function POST(request: NextRequest) {

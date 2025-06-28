@@ -2,10 +2,14 @@
   "name": "mwa-km-dt2025",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/server.js",
   "scripts": {
-    "dev": "npx tsx server.ts",
-    "build": "next build",
-    "start": "PORT=3001 next start",
+    "dev_old": "npx tsx server.ts",
+    "dev": "npx tsx ./src/server.ts",
+    "build_old": "next build",
+    "build": "next build && pkgroll --entry ./src/server.ts --entry ./src/socket-io.ts --tsconfig=tsconfig-server.json",
+    "start_old": "PORT=3001 next start",
+    "start": "node ./dist/server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -26,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "pkgroll": "^2.13.1",
     "tailwindcss": "^4",
     "tsx": "^4.19.4",
     "typescript": "^5"
