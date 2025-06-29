@@ -32,6 +32,7 @@ jobs:
         cat <<EOF > .env.production
         APP_NAME=${{ secrets.APP_NAME }}
         NODE_ENV=${{ secrets.NODE_ENV }}
+        API_DOMAIN=${{ secrets.API_DOMAIN }}
         EOF
 
     - name: Build app
