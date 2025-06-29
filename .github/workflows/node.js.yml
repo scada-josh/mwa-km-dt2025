@@ -31,4 +31,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: pm2 reload mwa-km-dt2025
+    - name: Write .env file
+      run: |
+        echo "APP_NAME=${{ secrets.APP_NAME }}" >> .env
+        echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> .env
+
 
