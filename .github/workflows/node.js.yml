@@ -18,8 +18,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     env:
-      APP_NAME: 'Realtime Course'
-      NODE_ENV: 'production'
+      APP_NAME: ${{ secrets.APP_NAME }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
 
     steps:
     - uses: actions/checkout@v4
