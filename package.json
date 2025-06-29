@@ -5,11 +5,11 @@
   "main": "./dist/server.js",
   "scripts": {
     "dev_old": "npx tsx server.ts",
-    "dev": "npx tsx ./src/server.ts",
+    "dev": "NODE_ENV=development npx tsx ./src/server.ts",
     "build_old": "next build",
-    "build": "next build && pkgroll --entry ./src/server.ts --entry ./src/socket-io.ts --tsconfig=tsconfig-server.json",
+    "build": "NODE_ENV=production next build && pkgroll --entry ./src/server.ts --entry ./src/socket-io.ts --tsconfig=tsconfig-server.json",
     "start_old": "PORT=3001 next start",
-    "start": "node ./dist/server.js",
+    "start": "NODE_ENV=production node ./dist/server.js",
     "lint": "next lint"
   },
   "dependencies": {
