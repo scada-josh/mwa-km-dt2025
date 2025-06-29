@@ -16,10 +16,6 @@ jobs:
       matrix:
         node-version: [22.16.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    
-    env:
-      APP_NAME: ${{ secrets.APP_NAME }}
-      NODE_ENV: ${{ secrets.NODE_ENV }}
 
     steps:
     - uses: actions/checkout@v4
@@ -28,13 +24,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: rm -rf .next
-    - run: npm run build --if-present
-    - run: pm2 reload mwa-km-dt2025
-    - name: Write .env file
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Create .env
       run: |
-        echo "APP_NAME=${{ secrets.APP_NAME }}" >> .env
-        echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> .env
+        cat <<EOF > .env
+        NEXT_PUBLIC_API_URL=${{ secrets.APP_NAME }}
+        DATABASE_URL=${{ secrets.NODE_ENV }}
+        EOF
+
+    - name: Build app
+      run: npm run build --if-present
+
+    - name: Reload PM2
+      run: pm2 reload mwa-km-dt2025
+
 
 
