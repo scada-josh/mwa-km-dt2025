@@ -16,6 +16,10 @@ jobs:
       matrix:
         node-version: [22.16.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
+    env:
+      APP_NAME: 'Realtime Course'
+      NODE_ENV: 'production'
 
     steps:
     - uses: actions/checkout@v4
