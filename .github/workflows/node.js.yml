@@ -33,6 +33,7 @@ jobs:
         APP_NAME=${{ secrets.APP_NAME }}
         NODE_ENV=${{ secrets.NODE_ENV }}
         API_DOMAIN=${{ secrets.API_DOMAIN }}
+        BASE_PATH=${{ secrets.BASE_PATH }}
         EOF
 
     - name: Build app
@@ -41,5 +42,7 @@ jobs:
     - name: Reload PM2
       run: pm2 reload mwa-km-dt2025
 
+    - name: Reload NGROK
+      run: pm2 reload ngrok-tunnel
 
 

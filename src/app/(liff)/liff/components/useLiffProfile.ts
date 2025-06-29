@@ -1,0 +1,36 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import liff from '@line/liff'
+import { LiffProfileProps } from '@/types/liff'
+
+export function useLiffProfile() {
+  const [profile, setProfile] = useState<LiffProfileProps | null>(null)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const initLiff = async () => {
+      try {
+        await liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID! })
+
+        if (!liff.isLoggedIn()) {
+          liff.login()
+          return
+        }
+
+        const profile = await liff.getProfile()
+        setProfile(profile)
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message)
+        } else {
+          setError('Unknown error')
+        }
+      }
+    }
+
+    initLiff()
+  }, [])
+
+  return { profile, error }
+}
