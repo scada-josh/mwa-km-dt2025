@@ -6,7 +6,7 @@ import axios, { AxiosResponse } from 'axios'
 import * as jose from 'node-jose'
 import crypto from 'crypto'
 
-import { lineOauthPrivate } from '../../../../Line Dev/workshop-line-chatbot-ai-5/workshop/webhook/functions/src/utils/linePrivateKey' // ต้อง export jwk ที่เป็น RSA key
+// import { lineOauthPrivate } from '../../../../Line Dev/workshop-line-chatbot-ai-5/workshop/webhook/functions/src/utils/linePrivateKey' // ต้อง export jwk ที่เป็น RSA key
 // import {
 //   LineAccessTokenResponse,
 //   LineProfile,
@@ -391,8 +391,8 @@ export const issueTokenv2_1 = async (): Promise<string> => {
     }
 
     // 2️⃣ ไม่มีใน Redis → สร้างใหม่ด้วย JWT
-    const jwkRaw = lineOauthPrivate.privateKey
-    const jwk = await jose.JWK.asKey(jwkRaw) // แปลง JWK object → Key object
+    // const jwkRaw = lineOauthPrivate.privateKey
+    // const jwk = await jose.JWK.asKey(jwkRaw) // แปลง JWK object → Key object
 
     const LINE_SIGNING_KEY: JwtHeader = {
       alg: 'RS256',
