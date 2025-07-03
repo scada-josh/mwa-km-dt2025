@@ -37,8 +37,8 @@ jobs:
         EOF
 
     - name: my-step
-      run: echo "Hello World!"
-      
+      run: echo "Hello World!!"
+
     - name: Build app
       run: npm run build --if-present
 
