@@ -5,6 +5,7 @@ export async function GET() {
     API_DOMAIN: process.env.API_DOMAIN,
     APP_NAME: process.env.APP_NAME,
     NEXT_PUBLIC_LIFF_ID: process.env.NEXT_PUBLIC_LIFF_ID,
-    DATABASE_URL:process.env.DATABASE_URL
+    DATABASE_URL:process.env.DATABASE_URL,
+    LINE_MESSAGING_ACCESS_TOKEN:process.env.LINE_MESSAGING_ACCESS_TOKEN
   })
 }
