@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 // };
 
 export const metadata: Metadata = {
-  title: "DT - KM/IM Day 2025",
+  title: "การจัดการความรู้และนวัตกรรม สายงานเทคโนโลยีดิจิทัล 2568",
   description: "กิจกรรม การจัดการความรู้และนวัตกรรม สายงานเทคโนโลยีดิจิทัล 2568",
 };
 
