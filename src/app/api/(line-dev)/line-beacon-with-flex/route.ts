@@ -135,7 +135,11 @@ async function handleEnterBeaconWithFlexEvent(event: LineEvent, profileData: Lin
   const flexMsg = createFlexProfileCard({ displayName, pictureUrl: pictureUrl ?? '', timestamp: Date.now() });
 
 
-  await reply(event.replyToken!, [flexMsg])
+  await reply(event.replyToken!, [{
+      type: 'text',
+      text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
+    } as Message,
+    flexMsg])
 }
 
 // ฟังก์ชันสร้าง Flex Message Card Profile
