@@ -10,7 +10,7 @@ import { io, Socket } from "socket.io-client";
 export default function Page() {
     // const hostname = process.env.HOST || '127.0.0.1'; // Use '127.0.0.1' as a fallback
     // const socketClient = io("http://localhost:3001");
-    const socketClient = io(process.env.SOCKET_IO_SERVER || '127.0.0.1');
+    const socketClient = io(process.env.NEXT_PUBLIC_SOCKET_IO_SERVER || 'http://localhost:3001');
     // const pathname = usePathname();
     const [isConnected, setIsConnected] = React.useState(false);
 
