@@ -1,6 +1,7 @@
 'use client'
 
-import { useLiffProfile } from './components/useLiffProfile'
+// import { useLiffProfile } from './components/useLiffProfile.ts.bak'
+import { useLiffProfile } from '@/utils/liff/useLiffProfile'
 import LiffProfileCard from './components/LiffProfileCard'
 
 export default function LiffPage() {
