@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react'
 import liff from '@line/liff'
 import { LiffProfileProps } from '@/types/liff'
 
-export function useLiffProfile() {
+export function useLiffProfileRedeem() {
   const [profile, setProfile] = useState<LiffProfileProps | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const initLiff = async () => {
       try {
-        await liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID! })
+        await liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID_REDEEM! })
 
         if (!liff.isLoggedIn()) {
           // liff.login()
