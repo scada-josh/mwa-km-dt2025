@@ -37,7 +37,7 @@ const questions: Question[] = [
     choices: [
       'A. คู่มือการใช้งานโปรแกรม',
       'B. รายงานประจำเดือน',
-      'C. เทคนิคเฉพาะตัวของช่างที่ไม่มีในเอกสาร',
+      'C. เป็นเทคนิค/ทักษะเฉพาะตัวของบุคคลที่ไม่มีในเอกสาร',
     ],
     correctIndex: 2,
   },
@@ -67,7 +67,7 @@ export default function QuizPage() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-12">
       <div className="max-w-3xl w-full space-y-6">
         <h1 className="text-2xl font-bold mb-4 text-center text-blue-800">
-          แบบทดสอบ Knowledge Management
+          แบบทดสอบ <br/>Knowledge Management
         </h1>
 
         {questions.map((q, qIndex) => (
