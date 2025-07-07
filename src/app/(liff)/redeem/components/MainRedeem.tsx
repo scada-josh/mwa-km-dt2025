@@ -2,6 +2,7 @@
 
 import { useLiffProfileRedeem } from "@/utils/liff/useLiffProfileRedeem";
 import QuizPage from "./QuizPage";
+import RedeemPage from "./RedeemPage";
 
 export default function MainRedeem() {
   const { profile, error , isQuiz} = useLiffProfileRedeem()
@@ -14,6 +15,7 @@ export default function MainRedeem() {
       {isQuiz ? (
         <>
           <div className="bg-green-100 p-4 rounded">✅ คุณทำแบบทดสอบ Knowledge Management แล้ว</div>
+          <RedeemPage />
         </>
       ) : (
         <>

@@ -113,5 +113,7 @@ export async function handleSaveQuiz(userId: string) {
 
   await upsertQuiz(userId);
 
-  redirect('https://liff.line.me/1585440068-MErl3jgz')
+  // redirect('https://liff.line.me/1585440068-MErl3jgz')
+
+  // return 'success'
 }
