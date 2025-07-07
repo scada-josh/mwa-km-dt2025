@@ -1,16 +1,11 @@
+import MainRegister from "./components/MainRegister";
+
+
 export default function RegisterPage() {
 
-
-    // const userLogin = event =>{
-
-    //   }
-
-
   return (
-    <main>
-
-      
-
-    </main>
-  );
+    <>
+      <MainRegister />
+    </>
+  )
 }

@@ -4,8 +4,8 @@
   "version": "5",
   "dialect": "mysql",
   "tables": {
-    "user": {
-      "name": "user",
+    "beacon": {
+      "name": "beacon",
       "columns": {
         "id": {
           "autoincrement": true,
@@ -14,17 +14,190 @@
           "primaryKey": false,
           "notNull": true
         },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(33)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_notification": {
+          "autoincrement": false,
+          "name": "is_notification",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {
+        "beacon_id": {
+          "name": "beacon_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "kmap_question": {
+      "name": "kmap_question",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(33)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "test_result": {
+          "autoincrement": false,
+          "name": "test_result",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {
+        "kmap_question_id": {
+          "name": "kmap_question_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "lurs": {
+      "name": "lurs",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(33)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "learn": {
+          "autoincrement": false,
+          "name": "learn",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "unlearn": {
+          "autoincrement": false,
+          "name": "unlearn",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "relearn": {
+          "autoincrement": false,
+          "name": "relearn",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {
+        "lurs_id": {
+          "name": "lurs_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "redeems": {
+      "name": "redeems",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(33)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_redeem": {
+          "autoincrement": false,
+          "name": "is_redeem",
+          "type": "tinyint(1)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {
+        "redeems_id": {
+          "name": "redeems_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "users": {
+      "name": "users",
+      "columns": {
+        "id": {
+          "autoincrement": true,
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(33)",
+          "primaryKey": false,
+          "notNull": true
+        },
         "fullname": {
           "autoincrement": false,
           "name": "fullname",
-          "type": "varchar(250)",
+          "type": "varchar(150)",
           "primaryKey": false,
           "notNull": true
         }
       },
       "compositePrimaryKeys": {
-        "user_id": {
-          "name": "user_id",
+        "users_id": {
+          "name": "users_id",
           "columns": [
             "id"
           ]

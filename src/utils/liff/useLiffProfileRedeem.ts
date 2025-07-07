@@ -14,9 +14,9 @@ export function useLiffProfileRedeem() {
         await liff.init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID_REDEEM! })
 
         if (!liff.isLoggedIn()) {
-          // liff.login()
-          const destinationUrl = window.location.href;
-          liff.login({ redirectUri: destinationUrl})
+          liff.login()
+          // const destinationUrl = window.location.href;
+          // liff.login({ redirectUri: destinationUrl})
           return
         }
 
