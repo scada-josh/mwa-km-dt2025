@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import { resolve } from "path";
 import { upsertUser } from "./actions/user";
 import { checkUserExist } from "./actions/checkUserExist";
+import { checkQuiz } from "./actions/checkQuiz";
 
 export const createCamps = async (prevState: any, formData: FormData) => {
   await new Promise((resolve) => setInterval(resolve, 1000));
@@ -100,5 +101,10 @@ export const findUser = async(uid:any) => {
 export async function handleCheckUserExist(userId: string) {
 
   return await checkUserExist(userId);
+}
+
+export async function handleCheckQuiz(userId: string) {
+
+  return await checkQuiz(userId);
 }
 

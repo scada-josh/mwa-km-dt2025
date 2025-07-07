@@ -3,10 +3,13 @@
 import { useEffect, useState } from 'react'
 import liff from '@line/liff'
 import { LiffProfileProps } from '@/types/liff'
+import { handleCheckQuiz } from '../actions'
 
 export function useLiffProfileRedeem() {
   const [profile, setProfile] = useState<LiffProfileProps | null>(null)
   const [error, setError] = useState<string | null>(null)
+
+  const [isQuiz, setIsQuiz] = useState(false)
 
   useEffect(() => {
     const initLiff = async () => {
@@ -22,6 +25,11 @@ export function useLiffProfileRedeem() {
 
         const profile = await liff.getProfile()
         setProfile(profile)
+
+        const chkQuiz = await handleCheckQuiz(profile.userId)
+        console.log(chkQuiz)
+        setIsQuiz(chkQuiz == "ทำแล้ว");
+
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message)
@@ -34,5 +42,5 @@ export function useLiffProfileRedeem() {
     initLiff()
   }, [])
 
-  return { profile, error }
+  return { profile, error , isQuiz}
 }
