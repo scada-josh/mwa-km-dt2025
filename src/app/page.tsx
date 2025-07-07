@@ -21,7 +21,7 @@ export default function Home() {
             .
           </li>
           <li className="tracking-[-.01em]">
-            Save and see your changes instantly. (MWA KM DT 2025) aAJJJJJJxxxxxxJ เย้ๆๆ (Next) - {process.env.NODE_ENV} : {process.env.APP_NAME}
+            Save and see your changes instantly. (MWA KM DT 2025) aaAJJJJJJxxxxxxJ เย้ๆๆ (Next) - {process.env.NODE_ENV} : {process.env.APP_NAME}
           </li>
         </ol>
 
