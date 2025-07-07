@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function KMIMPassport() {
   const booths = [
     { id: 1, label: "บูธที่ 1" },
