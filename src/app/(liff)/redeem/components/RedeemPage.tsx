@@ -5,6 +5,7 @@
 import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LiffProfileProps } from '@/types/liff';
+import { handleSaveRedeem } from '@/utils/actions';
 
 interface Props {
   profile: LiffProfileProps
@@ -17,7 +18,8 @@ export default function RedeemPage({ profile }: Props) {
   const handleRedeem = () => {
     console.log("Redeem")
 
-    console.log(profile.userId)
+    handleSaveRedeem(profile.userId)
+    // console.log(profile.userId)
 
     setRedeemed(true);
     if (audioRef.current) {

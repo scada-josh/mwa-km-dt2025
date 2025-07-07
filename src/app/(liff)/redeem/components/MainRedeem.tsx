@@ -3,6 +3,7 @@
 import { useLiffProfileRedeem } from "@/utils/liff/useLiffProfileRedeem";
 import QuizPage from "./QuizPage";
 import RedeemPage from "./RedeemPage";
+import ThankYou from "./ThankYou";
 
 export default function MainRedeem() {
   const { profile, error , isQuiz, isRedeem} = useLiffProfileRedeem()
@@ -20,10 +21,14 @@ export default function MainRedeem() {
           {isRedeem ? (
             <>
                 <div className="bg-green-100 p-4 rounded">✅ คุณรับของรางวัลแล้ว</div>
-                <p>Welcome back!</p>
+                {/* <p>Welcome back!</p> */}
+                <ThankYou />
             </>
           ):(
-            <RedeemPage profile={profile} />
+            <>
+                {/* <div className="bg-red-100 p-4 rounded">❌ คุณยังไม่ได้รับของรางวัล</div> */}
+                <RedeemPage profile={profile} />
+            </>
           )}
           
         </>

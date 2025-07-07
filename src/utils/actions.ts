@@ -13,6 +13,7 @@ import { checkQuiz } from "./actions/checkQuiz";
 import { upsertQuiz } from "./actions/upsertQuiz";
 
 import { checkRedeem } from "./actions/checkRedeem";
+import { upsertRedeem } from "./actions/upsertRedeem";
 
 export const createCamps = async (prevState: any, formData: FormData) => {
   await new Promise((resolve) => setInterval(resolve, 1000));
@@ -37,6 +38,10 @@ export const fetchCamp = async () => {
   ];
   return camps;
 };
+
+function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export const registerUser = async(prevState: any,formData: FormData) => {
 
@@ -126,4 +131,14 @@ export async function handleSaveQuiz(userId: string) {
 export async function handleCheckRedeem(userId: string) {
 
   return await checkRedeem(userId);
+}
+
+export async function handleSaveRedeem(userId: string) {
+
+  await upsertRedeem(userId);
+
+   await delay(5000); 
+  redirect('https://liff.line.me/1585440068-MErl3jgz')
+
+  // return 'success'
 }
