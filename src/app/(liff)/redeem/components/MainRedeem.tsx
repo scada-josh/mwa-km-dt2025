@@ -13,12 +13,12 @@ export default function MainRedeem() {
     <>
       {isQuiz ? (
         <>
-          <div className="bg-green-100 p-4 rounded">✅ คุณลงทะเบียนแล้ว</div>
+          <div className="bg-green-100 p-4 rounded">✅ คุณทำแบบทดสอบ Knowledge Management แล้ว</div>
         </>
       ) : (
         <>
           {/* <div className="bg-red-100 p-4 rounded">❌ ยังไม่ได้ทำแบบทดสอบ Knowledge Management</div> */}
-          <QuizPage />
+          <QuizPage profile={profile} />
         </>
       )}
     </>

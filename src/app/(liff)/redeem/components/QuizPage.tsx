@@ -1,7 +1,13 @@
 // app/quiz/page.tsx
 'use client';
 
+import { LiffProfileProps } from '@/types/liff';
+import { handleSaveQuiz } from '@/utils/actions';
 import { useState } from 'react';
+
+interface Props {
+  profile: LiffProfileProps
+}
 
 type Question = {
   id: number;
@@ -26,7 +32,7 @@ const questions: Question[] = [
     question: 'วัตถุประสงค์หลักของการทำ Knowledge Map คืออะไร?',
     choices: [
       'A. แสดงตำแหน่งที่ตั้งของพนักงานในแผนกต่าง ๆ',
-      'B. ใช้กระบวนการจัดการความรู้ (KM) เพื่อปรับปรุง/พัฒนางานของหน่วยงาน',
+      'B. ระบุตำแหน่งและความเชื่อมโยงขององค์ความรู้ที่สำคัญในองค์กร',
       'C. จัดตารางเวรของพนักงานแต่ละคน',
     ],
     correctIndex: 1,
@@ -43,7 +49,8 @@ const questions: Question[] = [
   },
 ];
 
-export default function QuizPage() {
+export default function QuizPage({ profile }: Props) {
+
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>(Array(questions.length).fill(-1));
   const [showFeedback, setShowFeedback] = useState<boolean[]>(Array(questions.length).fill(false));
 
@@ -61,6 +68,8 @@ export default function QuizPage() {
 
   const handleSubmit = () => {
     alert('✅ ยินดีด้วย! คุณตอบถูกทุกข้อแล้ว');
+    // console.log(profile.userId)
+    handleSaveQuiz(profile.userId)
   };
 
   return (

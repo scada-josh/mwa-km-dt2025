@@ -9,6 +9,7 @@ import { resolve } from "path";
 import { upsertUser } from "./actions/user";
 import { checkUserExist } from "./actions/checkUserExist";
 import { checkQuiz } from "./actions/checkQuiz";
+import { upsertQuiz } from "./actions/upsertQuiz";
 
 export const createCamps = async (prevState: any, formData: FormData) => {
   await new Promise((resolve) => setInterval(resolve, 1000));
@@ -108,3 +109,9 @@ export async function handleCheckQuiz(userId: string) {
   return await checkQuiz(userId);
 }
 
+export async function handleSaveQuiz(userId: string) {
+
+  await upsertQuiz(userId);
+
+  redirect('https://liff.line.me/1585440068-MErl3jgz')
+}
