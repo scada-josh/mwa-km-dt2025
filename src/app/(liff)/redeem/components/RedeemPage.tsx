@@ -4,13 +4,21 @@
 
 import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LiffProfileProps } from '@/types/liff';
 
-export default function RedeemPage() {
+interface Props {
+  profile: LiffProfileProps
+}
+
+export default function RedeemPage({ profile }: Props) {
   const [redeemed, setRedeemed] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleRedeem = () => {
     console.log("Redeem")
+
+    console.log(profile.userId)
+
     setRedeemed(true);
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
