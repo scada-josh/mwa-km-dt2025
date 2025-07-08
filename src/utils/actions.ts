@@ -16,6 +16,9 @@ import { checkRedeem } from "./actions/checkRedeem";
 import { upsertRedeem } from "./actions/upsertRedeem";
 import { insertLur } from "./actions/insertLur";
 import { object } from "framer-motion/client";
+import { LineProfile } from "./types/line";
+import { checkBeacon } from "./actions/checkBeacon";
+import { upsertBeaconBrodcast } from "./actions/upsertBeaconBrodcast";
 
 export const createCamps = async (prevState: any, formData: FormData) => {
   await new Promise((resolve) => setInterval(resolve, 1000));
@@ -200,4 +203,18 @@ export const reflectionLur = async(prevState: any,formData: FormData) => {
 
   return 'ขอบคุณสำหรับการสะท้อนการเรียนรู้ของคุณ!'
 
+}
+
+// ตรวจสอบการทำแบบทดสอบ Quiz
+export async function handleCheckBeaconBrodcast(userId: string) {
+  console.log("handleCheckBeaconBrodcast")
+  return await checkBeacon(userId);
+}
+
+export async function handleSaveBeaconBrodcast(userId: string) {
+
+  console.log("handleSaveBeaconBrodcast")
+  await upsertBeaconBrodcast(userId);
+
+  // return 'success'
 }

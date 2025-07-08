@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { handleCheckBeaconBrodcast, handleSaveBeaconBrodcast } from "@/utils/actions";
 import { reply } from "@/utils/line-utils/reply";
 import { LineProfile } from "@/utils/types/line";
 import { LineEvent, Message } from "@/utils/types/webhook";
@@ -113,7 +114,7 @@ export async function POST(req: NextRequest) {
           //   // ส่งข้อความตอบกลับ
           //   await replyToUser(replyToken, `คุณกล่าวว่า: ${userMessage}`);
           if (event.type === 'message' && replyToken) {
-            await replyToUser(replyToken, 'ตอบกลับข้อความ');
+            // await replyToUser(replyToken, 'ตอบกลับข้อความ');
           } else {
             console.warn('event นี้ไม่มี replyToken หรือไม่ใช่ message event');
           }
@@ -131,17 +132,17 @@ export async function POST(req: NextRequest) {
   }
 }
 
-async function handleEnterBeaconEvent(event: LineEvent) {
-  console.log('Beacon enter event detected:', event)
-  // Add logic to handle the 'enter' beacon event
-  // Example: Send a welcome message or log the event
-  await reply(event.replyToken!, [
-    {
-      type: 'text',
-      text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
-    } as Message,
-  ])
-}
+// async function handleEnterBeaconEvent(event: LineEvent) {
+//   console.log('Beacon enter event detected:', event)
+//   // Add logic to handle the 'enter' beacon event
+//   // Example: Send a welcome message or log the event
+//   await reply(event.replyToken!, [
+//     {
+//       type: 'text',
+//       text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
+//     } as Message,
+//   ])
+// }
 
 async function handleEnterBeaconWithFlexEvent(event: LineEvent, profileData: LineProfile) {
   console.log('Beacon enter event detected:', event)
@@ -151,12 +152,28 @@ async function handleEnterBeaconWithFlexEvent(event: LineEvent, profileData: Lin
   const {displayName, pictureUrl } = profileData;
   const flexMsg = createFlexProfileCard({ displayName, pictureUrl: pictureUrl ?? '', timestamp: Date.now() });
 
+  const resultChkBeacon = await handleCheckBeaconBrodcast(profileData.userId)
+  console.log(resultChkBeacon)
 
-  await reply(event.replyToken!, [{
-      type: 'text',
-      text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
-    } as Message,
-    flexMsg])
+  if(resultChkBeacon == "ส่งข้อความไปแล้ว"){
+
+    // await reply(event.replyToken!, [{
+    //     type: 'text',
+    //     text: `📡 Welcome! You just entered the beacon zone (ส่งข้อความไปแล้ว) (${event.beacon?.hwid} ${profileData.userId}).`,
+    //   } as Message,
+    //   flexMsg])
+
+  } else {
+
+    const resultSaveBeacon = await handleSaveBeaconBrodcast(profileData.userId)
+    console.log(resultSaveBeacon)
+    await reply(event.replyToken!, [{
+        type: 'text',
+        text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
+      } as Message,
+      flexMsg])
+  }
+
 }
 
 // ฟังก์ชันสร้าง Flex Message Card Profile
