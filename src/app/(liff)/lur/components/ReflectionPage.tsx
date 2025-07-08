@@ -1,28 +1,57 @@
-"use client";
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+'use client'
 
-import { useState } from "react";
+import { LiffProfileProps } from "@/types/liff";
+import { reflectionLur } from "@/utils/actions";
+// import { insertLur } from "@/utils/actions/insertLur";
+import { useActionState, useState } from "react";
+import { useFormStatus } from "react-dom";
 
-export default function ReflectionPage() {
+interface Props {
+  profile: LiffProfileProps
+}
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus()
+  return <button type="submit" disabled={pending} className="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition">
+    {pending ? 'Submitting...' : 'ส่ง Reflection (สะท้อนการเรียนรู้)'}
+  </button>
+}
+
+
+export default function ReflectionPage({ profile }: Props) {
+  const [lurMessage, lurFormAction] = useActionState(reflectionLur, null)
+
+  console.log(lurMessage)
+
+  
+
   const [formData, setFormData] = useState({
     learn: "",
     unlearn: "",
     relearn: "",
   });
 
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: connect to backend, API or store
-    console.log("Reflection Submitted:", formData);
-    alert("ขอบคุณสำหรับการสะท้อนการเรียนรู้ของคุณ!");
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // TODO: connect to backend, API or store
+
+  //   // console.log("Reflection Submitted:", formData);
+  //   alert("ขอบคุณสำหรับการสะท้อนการเรียนรู้ของคุณ!");
+  // };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 p-4 md:p-12">
       <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 space-y-6 border border-blue-100">
+
+        {lurMessage && <h3>{lurMessage}</h3> }
+        
+
         <h1 className="text-3xl font-bold text-blue-700 text-center mb-2">
           ✍️ Reflection <br/>(สะท้อนการเรียนรู้)
         </h1>
@@ -31,8 +60,11 @@ export default function ReflectionPage() {
           กระซิบดังๆ ให้เรารู้ <br/>เพื่อพัฒนาและเรียนรู้ไปด้วยกัน
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        {/* <form onSubmit={handleSubmit} className="space-y-6" action={reflectionLur}> */}
+        <form  className="space-y-6" action={lurFormAction}>
           <div>
+            <input type="hidden" name="userId" value={profile.userId} />
+
             <label className="block font-medium text-gray-700 mb-1">
               1. ความรู้ที่ฉันได้เรียนรู้ใหม่ (Learn)
             </label>
@@ -77,12 +109,13 @@ export default function ReflectionPage() {
             />
           </div>
 
-          <button
+          <SubmitButton />
+          {/* <button
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition"
           >
             ส่ง Reflection (สะท้อนการเรียนรู้)
-          </button>
+          </button> */}
         </form>
       </div>
     </main>

@@ -14,6 +14,8 @@ import { upsertQuiz } from "./actions/upsertQuiz";
 
 import { checkRedeem } from "./actions/checkRedeem";
 import { upsertRedeem } from "./actions/upsertRedeem";
+import { insertLur } from "./actions/insertLur";
+import { object } from "framer-motion/client";
 
 export const createCamps = async (prevState: any, formData: FormData) => {
   await new Promise((resolve) => setInterval(resolve, 1000));
@@ -141,4 +143,57 @@ export async function handleSaveRedeem(userId: string) {
   redirect('https://liff.line.me/1585440068-MErl3jgz')
 
   // return 'success'
+}
+
+export const reflectionLur = async(prevState: any,formData: FormData) => {
+
+  // const uid = formData.get('userId')
+  const rawData = Object.fromEntries(formData)
+  console.log(rawData)
+  console.log(rawData.userId)
+  console.log(rawData.learn)
+
+  // const userId = formData.get('userId')
+  // const learn = formData.get('learn')
+  // const unlearn = formData.get('unlearn')
+  // const relearn = formData.get('relearn')
+
+  await insertLur(rawData)
+  // await insertLur(userId, learn, unlearn, relearn)
+
+  revalidatePath('/lur')
+
+  await new Promise((resolve) => setInterval(resolve, 2000));
+  // // await new Promise((resolve) => setInterval(resolve, 5000));
+
+  // // const fullname = formData.get('fullname')
+  // // const userId = formData.get('userId')
+
+  // // console.log('Register User')
+  // // console.log(fullname)
+  // // console.log(userId)
+
+  // const rawData = Object.fromEntries(formData)
+  // console.log(rawData)
+  // console.log(rawData.userId)
+
+  // // revalidatePath('/kmim-passport')
+  // // redirect('/')
+
+
+  //   const userId = formData.get('userId') as string;
+  //   const fullName = formData.get('fullname') as string;
+
+  //   // console.log(userId)
+  //   // console.log(fullName)
+
+  //   await insertLur(userId, learn, unlearn, relearn)
+  // // await upsertUser(userId, fullName);
+  // // revalidatePath('/kmim-passport')
+  // // window.location.reload();
+  // redirect('https://liff.line.me/1585440068-O4grBJW3')
+  // // revalidatePath('/register')
+
+  return 'ขอบคุณสำหรับการสะท้อนการเรียนรู้ของคุณ!'
+
 }
