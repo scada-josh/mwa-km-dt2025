@@ -161,7 +161,11 @@ export const reflectionLur = async(prevState: any,formData: FormData) => {
   await insertLur(rawData)
   // await insertLur(userId, learn, unlearn, relearn)
 
-  revalidatePath('/lur')
+//   setTimeout(() => {
+//   window.close();
+// }, 800);
+  // revalidatePath('/lur')
+  redirect('https://liff.line.me/1585440068-bJqRVGxJ')
 
   await new Promise((resolve) => setInterval(resolve, 2000));
   // // await new Promise((resolve) => setInterval(resolve, 5000));
