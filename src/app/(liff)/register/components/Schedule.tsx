@@ -46,7 +46,8 @@ export default function Schedule() {
               <h2 className="font-bold text-lg text-gray-900">พิธีเปิดงาน KM/IM Day 2025 <br/> สายงานเทคโนโลยีดิจิทัล</h2>
               <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
                 <li>ประธานคณะทำงานย่อยฯ กล่าวรายงาน วัตถุประสงค์ของงาน</li>
-                <li>รวก. (ท) กล่าวเปิดงาน + Executive Talk</li>
+                <li>ผวก. กล่าวเปิดงาน)</li>
+                <li>จับรางวัลพิเศษ (Special Lucky Draw)</li>
               </ul>
             </div>
           </div>
@@ -66,6 +67,152 @@ export default function Schedule() {
               </ul>
             </div>
           </div>
+
+          {/* กำหนดการ 09.30 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                09.30 - 10.00 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">KM/IM Show and Share (ทีมละ 7 นาที)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>ฝคท., ฝพท., ฝยท. นำเสนอผลงาน 1 ฝ่าย 1 นวัตกรรม</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 10.00 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                10.00 - 10.15 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">KM Talk (ช่วงที่ 1)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>ถอดความรู้ผู้เกษียณ (พี่ซ้ง, พี่สม)</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 10.15 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                10.15 - 10.25 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">ประกาศผลผู้ชนะ KM/IM Show and Share</h2>
+              <ul className="list-inside text-gray-800 mt-0 space-y-1">
+                <li className="flex items-start gap-2">
+                  <Ticket className="w-5 h-5 text-green-700 mt-1" />
+                  Lucky Draw (ครั้งที่ 2)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 10.25 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                10.25 - 10.50 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">อัพเดท Technology Trend 2025 (ช่วงที่ 1)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>
+                  <b>คุณศักดิ์ประเสริฐ อภิวัฒนเดช</b> - The Bright and The Dark Side of AI
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 10.50 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                10.50 - 11.15 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">อัพเดท Technology Trend 2025 (ช่วงที่ 2)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>
+                  <b>คุณกล้า ตั้งสุวรรณ</b> - Strategic Moves in the AI Era with Data-Driven Insights
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 11.15 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                11.15 - 11.30 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">KM Talk (ช่วงที่ 2)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>สัมภาษณ์พี่ช่าง กปน.</li>
+                <li>ผู้ชนะจากการประกวด KM Reward</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 11.30 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                11.30 - 11.45 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">OPA/LL Talk</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>ผู้เข้ารอบสุดท้าย 6 ทีม (จากการประกวด OPA/LL) ร่วมแลกเปลี่ยนเรียนรู้บนเวที</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 11.45 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                11.45 - 11.55 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">ประกาศผลผู้ชนะ OPA/LL</h2>
+              <ul className="list-inside text-gray-800 mt-0 space-y-1">
+                <li className="flex items-start gap-2">
+                  <Ticket className="w-5 h-5 text-green-700 mt-1" />
+                  Lucky Draw (ครั้งที่ 3)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 12.00 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                11.55 - 12.00 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">พิธีปิด</h2>
+              <ul className="list-inside text-gray-800 mt-0 space-y-1">
+                <li>- ชวก.(ท) กล่าวปิดงาน</li>
+                <li className="flex items-start gap-2">
+                  <Ticket className="w-5 h-5 text-green-700 mt-1" />
+                  Lucky Draw (ครั้งที่ 4)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* กำหนดการ 12.00 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="font-semibold bg-indigo-600 text-white px-2 py-1 rounded inline-block">
+                12.00 - 12.15 น.
+            </div>
+            <div className="md:col-span-3">
+              <h2 className="font-bold text-lg text-gray-900">ผู้เข้าร่วมงานเยี่ยมชมนิทรรศการ (ด้านนอกห้อง)</h2>
+              <ul className="list-disc list-inside text-gray-800 mt-0 space-y-1">
+                <li>ชมนิทรรศการ / กิจกรรมเกม / รับของที่ระลึก</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </section>
 
