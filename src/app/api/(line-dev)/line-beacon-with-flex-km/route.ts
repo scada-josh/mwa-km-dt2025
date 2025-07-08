@@ -267,24 +267,24 @@ function createFlexProfileCard({ displayName, pictureUrl, timestamp }: { display
 }
 
 
-async function replyToUser(replyToken: string, message: string) {
-  const LINE_MESSAGING_ACCESS_TOKEN = process.env.LINE_MESSAGING_ACCESS_TOKEN;
-//   console.log(LINE_MESSAGING_ACCESS_TOKEN)
+// async function replyToUser(replyToken: string, message: string) {
+//   const LINE_MESSAGING_ACCESS_TOKEN = process.env.LINE_MESSAGING_ACCESS_TOKEN;
+// //   console.log(LINE_MESSAGING_ACCESS_TOKEN)
 
-  await fetch('https://api.line.me/v2/bot/message/reply', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${LINE_MESSAGING_ACCESS_TOKEN}`,
-    },
-    body: JSON.stringify({
-      replyToken,
-      messages: [
-        {
-          type: 'text',
-          text: message,
-        },
-      ],
-    }),
-  });
-}
+//   await fetch('https://api.line.me/v2/bot/message/reply', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Authorization: `Bearer ${LINE_MESSAGING_ACCESS_TOKEN}`,
+//     },
+//     body: JSON.stringify({
+//       replyToken,
+//       messages: [
+//         {
+//           type: 'text',
+//           text: message,
+//         },
+//       ],
+//     }),
+//   });
+// }
