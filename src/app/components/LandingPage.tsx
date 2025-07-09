@@ -18,6 +18,7 @@ export default function LandingPage() {
         </div>
         </section>
 
+
       {/* ส่วนที่ 2-4: กำหนดการ */}
       <section className="w-full bg-[#bbcace] px-6 py-6">
         <div className="max-w-4xl mx-auto space-y-6">
