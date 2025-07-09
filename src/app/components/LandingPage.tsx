@@ -30,7 +30,7 @@ export default function LandingPage() {
             <div className="md:col-span-3">
               <h2 className="font-bold text-lg text-gray-900">ลงทะเบียน</h2>
               <ul className="list-disc list-inside text-gray-800 mt-0">
-                <li>ชมนิทรรศการ / กิจกรรมเกม / รับประทานอาหารว่าง</li>
+                <li>ชมนิทรรศการ / กิจกรรมเกม / รับประทานอาหารว่าง :</li>
               </ul>
             </div>
           </div>
