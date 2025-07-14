@@ -50,6 +50,11 @@ jobs:
         NEXT_PUBLIC_LIFF_ID_REDEEM=${{secrets.NEXT_PUBLIC_LIFF_ID_REDEEM}}
         NEXT_PUBLIC_LIFF_ID_PASSPORT=${{secrets.NEXT_PUBLIC_LIFF_ID_PASSPORT}}
         NEXT_PUBLIC_LIFF_ID_LUR=${{secrets.NEXT_PUBLIC_LIFF_ID_LUR}}
+        DB_HOST=${{secrets.DB_HOST}}
+        DB_USER=${{secrets.DB_USER}}
+        DB_PASSWORD=${{secrets.DB_PASSWORD}}
+        DB_DATABASE=${{secrets.DB_DATABASE}}
+        DB_PORT=${{secrets.DB_PORT}}
         EOF
 
     - name: my-step
