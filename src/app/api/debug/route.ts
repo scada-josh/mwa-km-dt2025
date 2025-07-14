@@ -21,11 +21,10 @@ export async function GET() {
     NEXT_PUBLIC_LIFF_ID_REDEEM:process.env.NEXT_PUBLIC_LIFF_ID_REDEEM,
     NEXT_PUBLIC_LIFF_ID_PASSPORT:process.env.NEXT_PUBLIC_LIFF_ID_PASSPORT,
     NEXT_PUBLIC_LIFF_ID_LUR:process.env.NEXT_PUBLIC_LIFF_ID_LUR,
-    // DB_HOST:process.env.DB_HOST,
-    // DB_USER:process.env.DB_USER,
-    // DB_PASSWORD:process.env.DB_PASSWORD,
-    // DB_DATABASE:process.env.DB_DATABASE,
-    // DB_PORT:process.env.DB_PORT,
-
+    DB_HOST:process.env.DB_HOST,
+    DB_USER:process.env.DB_USER,
+    DB_PASSWORD:process.env.DB_PASSWORD,
+    DB_DATABASE:process.env.DB_DATABASE,
+    DB_PORT:process.env.DB_PORT
   })
 }
