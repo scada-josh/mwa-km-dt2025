@@ -26,7 +26,7 @@ export default function SoarAndCloseButton() {
         onClick={handleClick}
         className="block mx-auto mt-8 px-6 py-3 text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-lg text-xl font-semibold items-center gap-2 transform transition hover:-translate-y-2 hover:shadow-2xl active:scale-95"
       >
-        🚀 แล้วกันใหม่นะทุกคน
+        🚀 แล้วเจอกันใหม่นะทุกคน
       </button>
     </div>
   );

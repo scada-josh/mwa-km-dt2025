@@ -19,7 +19,8 @@ export async function POST(req: NextRequest) {
     //   // ส่งข้อความตอบกลับ
     //   await replyToUser(replyToken, `คุณกล่าวว่า: ${userMessage}`);
     if (event.type === 'message' && replyToken) {
-      await replyToUser(replyToken, 'ตอบกลับข้อความ');
+      console.log(replyToken)
+      await replyToUser(replyToken, 'ตอบกลับข้อความ Taw');
     } else {
       console.warn('event นี้ไม่มี replyToken หรือไม่ใช่ message event');
     }

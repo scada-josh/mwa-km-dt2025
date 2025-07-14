@@ -169,8 +169,11 @@ async function handleEnterBeaconWithFlexEvent(event: LineEvent, profileData: Lin
   const resultChkBeacon = await handleCheckBeaconBrodcast(profileData.userId)
   console.log(resultChkBeacon)
 
+  
   if(resultChkBeacon == "ส่งข้อความไปแล้ว"){
 
+    // const resultSaveBeacon = await handleSaveBeaconBrodcast(profileData.userId)
+    // console.log(resultSaveBeacon)
     // await reply(event.replyToken!, [{
     //     type: 'text',
     //     text: `📡 Welcome! You just entered the beacon zone (ส่งข้อความไปแล้ว) (${event.beacon?.hwid} ${profileData.userId}).`,
@@ -183,7 +186,7 @@ async function handleEnterBeaconWithFlexEvent(event: LineEvent, profileData: Lin
     console.log(resultSaveBeacon)
     await reply(event.replyToken!, [{
         type: 'text',
-        text: `📡 Welcome! You just entered the beacon zone (${event.beacon?.hwid}).`,
+        text: `📡 Welcome! You just entered the beacon zone (ยังไม่ได้ส่งข้อความ) (${event.beacon?.hwid}).`,
       } as Message,
       flexMsg])
   }
