@@ -1,11 +1,12 @@
 'use server'
 
+import db from '@/app/lib/db';
 import { redeems } from '@/db/schema';
 import { and, eq } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/mysql2';
+// import { drizzle } from 'drizzle-orm/mysql2';
 
 export async function checkRedeem(userId: string): Promise<'รับของแล้ว' | 'ยังไม่ได้รับของ'> {
-  const db = drizzle(process.env.DATABASE_URL!)
+  // const db = drizzle(process.env.DATABASE_URL!)
 
   const result = await db
     .select()

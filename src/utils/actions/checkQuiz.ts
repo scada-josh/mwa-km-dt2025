@@ -1,11 +1,12 @@
 'use server'
 
+import db from '@/app/lib/db';
 import { kmapQuestion } from '@/db/schema';
 import { and, eq } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/mysql2';
+// import { drizzle } from 'drizzle-orm/mysql2';
 
 export async function checkQuiz(userId: string): Promise<'ทำแล้ว' | 'ยังไม่ทำ'> {
-  const db = drizzle(process.env.DATABASE_URL!)
+  // const db = drizzle(process.env.DATABASE_URL!)
 
   const result = await db
     .select()

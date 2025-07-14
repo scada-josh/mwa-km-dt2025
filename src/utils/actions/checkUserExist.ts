@@ -1,11 +1,12 @@
 'use server'
 
+import db from '@/app/lib/db';
 import { users } from '@/db/schema';
 import { eq } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/mysql2';
+// import { drizzle } from 'drizzle-orm/mysql2';
 
 export async function checkUserExist(userId: string): Promise<'มี' | 'ไม่มี'> {
-    const db = drizzle(process.env.DATABASE_URL!)
+    // const db = drizzle(process.env.DATABASE_URL!)
 
   const result = await db
     .select()

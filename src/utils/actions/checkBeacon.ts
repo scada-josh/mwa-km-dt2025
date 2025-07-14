@@ -1,11 +1,12 @@
 'use server'
 
+import db from '@/app/lib/db';
 import { beacon } from '@/db/schema';
 import { and, eq } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/mysql2';
+// import { drizzle } from 'drizzle-orm/mysql2';
 
 export async function checkBeacon(userId: string): Promise<'ส่งข้อความไปแล้ว' | 'ยังไม่ได้ส่งข้อความ'> {
-  const db = drizzle(process.env.DATABASE_URL!)
+  // const db = drizzle(process.env.DATABASE_URL!)
 
   const result = await db
     .select()
