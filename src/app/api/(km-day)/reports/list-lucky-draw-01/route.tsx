@@ -5,13 +5,13 @@
 // import { eq, asc } from "drizzle-orm";
 
 import { lurs, users } from "@/db/schema";
-// import { drizzle } from "drizzle-orm/mysql2";
+import { drizzle } from "drizzle-orm/mysql2";
 import { NextResponse } from "next/server";
 import { eq, asc } from 'drizzle-orm';
-import db from "@/app/lib/db";
+// import db from "@/app/lib/db";
 
 export async function GET() {
-  // const db = drizzle(process.env.DATABASE_URL!)
+  const db = drizzle(process.env.DATABASE_URL!)
   
   const result = await db
     .selectDistinct({
